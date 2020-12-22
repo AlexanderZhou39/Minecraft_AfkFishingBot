@@ -9,32 +9,54 @@ time_2 = 0
 
 screenWidth, screenHeight = pyautogui.size()
 width, height = pyautogui.screenshot().size
-scWidth, scHeight = int(width * 0.4), int(height * 0.4)
-scLeft, scTop = int(width/2-scWidth/2), int(height/2-scHeight/2)
+scWidth, scHeightRef = int(width * 0.1), int(height * 0.1)
+scLeft, scTop = int(width/2 - scWidth/2), int(height/2 - scHeightRef)
+
+scHeight = height - scTop - 2*scHeightRef
+
+fish_count = 0
 
 print('ready!')
 keyboard.wait(';')
+keyboard.press_and_release('i')
+time.sleep(3)
 while True:
 
     time_2 = time.time()
-    # keyboard.press_and_release('d')
-    # time.sleep(1)
-    if time_2 - time_1 > 0.5:
-        # im = pyautogui.screenshot(region=(scLeft, scTop, scWidth, scHeight))
-        if pyautogui.locateOnScreen('medium.png', region=(scLeft, scTop, scWidth, scHeight), confidence = 0.7) != None:
-            print('found hook!')
-        # im = pyautogui.screenshot('mine_sc.png')
-        # print(im.size)
-        # break
-        time_1 = time.time()
-    if keyboard.is_pressed('t') != False:
-        print('--ended program--')
+    if keyboard.is_pressed('b') == True:
+        print("fish count: " + str(fish_count))
+        keyboard.press_and_release('i')
         break
 
-    # pyautogui.moveTo(screenWidth/2, screenHeight/2)
+    bobber_found = False
 
-    # mouseX, mouseY = pyautogui.position()
+    if time_2 - time_1 > 0.5:
+        time_1 = time.time()
+        img = pyautogui.screenshot(region=(scLeft, scTop, scWidth, scHeight))
+        img_w, img_h = img.size
 
-    # if pyautogui.locateOnScreen('screenshot.png', confidence = 0.8) != None:
-    #     print("I see it!")
-    # print(pyautogui.pixel(mouseX, mouseY))
+        for x in range(0, img_w, 2):
+            if bobber_found:
+                break
+            for y in range(0, img_h, 2):
+
+                r,g,b = img.getpixel((x,y))[:3]
+
+                if r/(g+b+1) > 1.6:
+                    bobber_found = True
+                    break
+
+        if bobber_found == False:
+            fish_count += 1
+            keyboard.press_and_release('i')
+            time.sleep(1)
+            keyboard.press_and_release('i')
+            time.sleep(3)
+        
+        
+    elif time_2 - time_1 > 25:
+        keyboard.press_and_release('i')
+        time.sleep(1)
+        keyboard.press_and_release('i')
+        time.sleep(3)
+        time_1 = time.time()
