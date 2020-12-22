@@ -24,7 +24,7 @@ Once the bot is ready, it'll print "ready" into the console. Switch to minecraft
 Once you are set, press ";" key or semicolon and the bot should throw out the line automatically. Once you are done, press and hold "b" key, and it should reel the line back in (or throw it out if it was reeled in). The number of reel-ins due to not detecting the bobber is printed into the console. 
 
 ### Warnings:
-The bot does not check for hunger, health, or durability. Keep that in mind. The bot should work reasonably well at night: the red color on the bobber is checked by a ratio of the rgb values. Though, this also means that any red thing near the crosshair will also count as a "bobber."
+The bot does not check for hunger, health, or durability. Keep that in mind. The bot should work reasonably well at night: the red color on the bobber is checked by a ratio of the rgb values. Though, this also means that any red thing near the crosshair will also count as a "bobber." A rogue squid blocking the view can also trigger a reel-in, though it's not too much of a problem. 
 
 Make sure you do not throw the bobber too far. The program only checks every other pixel for speed. 
 
