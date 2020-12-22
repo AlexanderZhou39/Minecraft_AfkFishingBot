@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "25191db758da698c26e545a0b032a2ec9ddccccc96a7090208f5b7a99b0aa2b0"
+            "sha256": "2afc64873ac6ccff077c27f587717f03ee1eedfa744948874702570c3bf82021"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -81,6 +81,14 @@
                 "sha256:2194227de8bff7a3d6da541848705a155dcbb2a06ee120d9f280a1d7f51263ff"
             ],
             "version": "==1.0.9"
+        },
+        "pynput": {
+            "hashes": [
+                "sha256:3ee18347a20be07b7185c9aa29f37c75d322f85ac8ec689ebb49ee39fa9dcb94",
+                "sha256:dd8b1ff2451e2b76c753e115ab20b6cfa73801c395f22987474f942726558fec"
+            ],
+            "index": "pypi",
+            "version": "==1.7.2"
         },
         "pyobjc": {
             "hashes": [
@@ -935,6 +943,7 @@
                 "sha256:a1854a0b8baea76e6c43812ecf26dd6fc5a11e9cada212b36bf35e23e670750c",
                 "sha256:fbf8d816da04f0705707906fb751bd360d652914ace3989ed6e55ff6a7a79c62"
             ],
+            "markers": "sys_platform == 'darwin'",
             "version": "==7.0.1"
         },
         "pyobjc-framework-quicklookthumbnailing": {
@@ -1203,6 +1212,13 @@
                 "sha256:a54be431be212c95106b3f9dbb3903fd96683caca926613ba7dd8b4605cb87cc"
             ],
             "version": "==0.4.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259",
+                "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+            ],
+            "version": "==1.15.0"
         }
     },
     "develop": {}
